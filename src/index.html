@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/udemycourse.esm.js"></script>
+  <script nomodule src="/build/udemycourse.js"></script>
+
+  <style>
+    body {
+      font-family: sans-serif;
+    }
+
+    .side-nav ul {
+      list-style: none;
+    }
+
+    .side-nav li {
+      margin: 1rem 0;
+    }
+
+    .side-nav a {
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <button id='side-drawer-button'>Open
+    Drawer</button>
+  <side-drawer title='Main Menu'>
+    <nav class='side-nav'>
+      <ul>
+        <li><a>Link 1</a></li>
+        <li><a>Link 2</a></li>
+        <li><a>Link 3</a></li>
+      </ul>
+    </nav>
+  </side-drawer>
+
+  <script>
+    const sideDrawerButton = document.querySelector('#side-drawer-button');
+    const sideDrawer = document.querySelector('side-drawer');
+    sideDrawerButton.addEventListener('click', () => {
+      if (!sideDrawer.open) {
+        sideDrawer.open = true;
+      }
+    })
+  </script>
+
+</body>
+
+</html>
